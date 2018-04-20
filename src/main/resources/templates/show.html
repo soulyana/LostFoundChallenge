@@ -6,11 +6,11 @@
 </head>
 <body>
 <a href="/">Show All Pets</a><br />
-Type :<span th:text="${pet.type}" ></span><br />
-Name :<span th:text="${pet.name}" ></span><br />
-Description :<span th:text="${pet.description}" ></span><br />
-Image :<span img src="${pet.image}" width="25%" height="25%" alt="${pet.type}"></span><br />
-<!--Pet status :<span th:text="${pet.found}" ></span><br />-->
+Type: <span th:text="${pet.type}" ></span><br />
+Name: <span th:text="${pet.name}" ></span><br />
+Description: <span th:text="${pet.description}" ></span><br />
+Image: <span img src="${pet.image}" width="25%" height="25%" alt="${pet.type}"></span><br />
+Pet status: <span th:text="${pet.found}?'Lost':'Found'" ></span><br />
 <a th:href="@{/delete/{id}(id=${pet.id})}">Remove this pet from listing</a>
 </body>
 </html>
