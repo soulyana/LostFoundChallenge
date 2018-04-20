@@ -11,7 +11,7 @@
 Type: <span th:text="${pet.type}" ></span><br />
 Name: <span th:text="${pet.name}" ></span><br />
 Description: <span th:text="${pet.description}" ></span><br />
-Image: <span><img th:src="${pet.image}" alt="Lost Pet Image" width="50px" height="50px"></span><br />
+Image: <span><img th:src="${pet.image}" alt="Lost Pet" width="50px" height="50px"></span><br />
 Pet status: <span th:text="${pet.found}?'Lost':'Found'" ></span><br />
 <a href="/">Show All Pets</a><br />
 <a th:href="@{/delete/{id}(id=${pet.id})}">Remove this pet from listing</a>
