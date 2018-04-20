@@ -75,6 +75,7 @@ public class Pet {
     }
 
     public String getImage() {
+
         return image;
     }
 
