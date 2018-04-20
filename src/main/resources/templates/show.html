@@ -7,18 +7,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"/>
 </head>
 <body>
+<div class="container">
+    <h2><span th:text="${pet.name} " ></span>'s Information</h2>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Pet status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><span th:text="${pet.type}" ></span><br /></td>
+            <td><span th:text="${pet.name} " ></span><br /></td>
+            <td><span th:text="${pet.description}" ></span><br /></td>
+            <td><span><img th:src="${pet.image}" alt="Lost Pet" width="50px" height="50px"></span><br /></td>
+            <td><span th:text="${pet.found}?'Lost':'Found'" ></span><br /></td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="/">Show All Pets</a><br />
+    <a th:href="@{/delete/{id}(id=${pet.id})}">Remove this pet from listing</a>
 
-Type: <span th:text="${pet.type}" ></span><br />
-Name: <span th:text="${pet.name}" ></span><br />
-Description: <span th:text="${pet.description}" ></span><br />
-Image: <span><img th:src="${pet.image}" alt="Lost Pet" width="50px" height="50px"></span><br />
-Pet status: <span th:text="${pet.found}?'Lost':'Found'" ></span><br />
-<a href="/">Show All Pets</a><br />
-<a th:href="@{/delete/{id}(id=${pet.id})}">Remove this pet from listing</a>
-
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </body>
 </html>
