@@ -35,6 +35,9 @@ public class MainController {
         if (result.hasErrors()) {
             return "petform";
         }
+        if(pet.getImage().isEmpty()) {
+            pet.setImage("/Images/lost.jpg");
+        }
         petRepository.save(pet);
         return "redirect:/";
     }

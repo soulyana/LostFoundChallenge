@@ -75,9 +75,6 @@ public class Pet {
     }
 
     public String getImage() {
-        if(image==null) {
-            image = "/Images/lost.jpg";
-        }
         return image;
     }
 
