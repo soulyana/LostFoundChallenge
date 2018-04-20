@@ -8,31 +8,31 @@
 </head>
 <body>
 <div class="container">
-    <a href="/add">Add a pet</a><br />
-<table class="table table-hover">
-    <tr>
-        <th>Type of Animal</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Status</th>
-        <th>Image</th>
-        <td>Actions</td>
-    </tr>
-    <tr th:each="pet : ${pets}">
-        <td th:text="${pet.type}"></td>
-        <td th:text="${pet.name}"></td>
-        <td th:text="${pet.description}"></td>
-        <td th:text="${pet.found}?'Lost':'Found'"></td>
-        <td ><img th:src="${pet.image}" alt="Lost Pet Image" width="50px" height="50px"> </td>
-        <td >
-            <a th:href="@{/reportFound/{id}(id=${pet.id})}">Report Found</a> -
-            <a th:href="@{/reportLost/{id}(id=${pet.id})}">Report Lost</a> -
-            <a th:href="@{/update/{id}(id=${pet.id})}">Update</a> -
-            <a th:href="@{/detail/{id}(id=${pet.id})}">Details</a> -
-            <a th:href="@{/delete/{id}(id=${pet.id})}">Delete</a>
-        </td>
-    </tr>
-</table>
+    <table class="table table-hover">
+        <tr>
+            <th>Type of Animal</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Image</th>
+            <td>Actions</td>
+        </tr>
+        <tr th:each="pet : ${pets}">
+            <td th:text="${pet.type}"></td>
+            <td th:text="${pet.name}"></td>
+            <td th:text="${pet.description}"></td>
+            <td th:text="${pet.found}?'Lost':'Found'"></td>
+            <td ><img th:src="${pet.image}" alt="Lost Pet Image" width="50px" height="50px"> </td>
+            <td >
+                <a th:href="@{/reportFound/{id}(id=${pet.id})}">Report Found</a> -
+                <a th:href="@{/reportLost/{id}(id=${pet.id})}">Report Lost</a> -
+                <a th:href="@{/update/{id}(id=${pet.id})}">Update</a> -
+                <a th:href="@{/detail/{id}(id=${pet.id})}">Details</a> -
+                <a th:href="@{/delete/{id}(id=${pet.id})}">Delete</a>
+            </td>
+        </tr>
+    </table>
+    <a href="/add" class="btn btn-info" role="button">Add a pet</a><br />
 </div>
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
