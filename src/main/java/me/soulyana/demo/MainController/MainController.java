@@ -58,5 +58,26 @@ public class MainController {
         petRepository.deleteById(id);
         return "redirect:/";
     }
+
+    @RequestMapping("/reportFound/{id}")
+    public String reportFound(@PathVariable("id") long id, Model model) {
+        //NEED .GET FOR SPRING 2
+        Pet pet = petRepository.findById(id).get();
+        pet.setFound(false);
+        petRepository.save(pet);
+        model.addAttribute("pet", petRepository.findById(id).get());
+        return "redirect:/";
+    }
+
+    @RequestMapping("/reportLost/{id}")
+    public String reportLost(@PathVariable("id") long id, Model model) {
+        //NEED .GET FOR SPRING 2
+        Pet pet = petRepository.findById(id).get();
+        pet.setFound(true);
+        petRepository.save(pet);
+        model.addAttribute("pet", petRepository.findById(id).get());
+        return "redirect:/";
+    }
+
 }
 
